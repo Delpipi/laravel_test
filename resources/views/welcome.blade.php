@@ -19,15 +19,15 @@
                 <form>
                     <div class="mb-3">
                         <label for="productName" class="form-label">Product Name</label>
-                        <input type="text" class="form-control" id="productName" name="productName">
+                        <input type="text" class="form-control" id="productName">
                     </div>
                     <div class="mb-3">
                         <label for="quantity" class="form-label">Quantity in stock</label>
-                        <input type="number" class="form-control" id="quantity" name="quantity">
+                        <input type="number" class="form-control" id="quantity">
                     </div>
                     <div class="mb-3">
                         <label for="price" class="form-label">Price per item</label>
-                        <input type="number" class="form-control" id="price" name="price">
+                        <input type="number" class="form-control" id="price">
                     </div>
                     <button type="submit" id="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -69,9 +69,19 @@
 
     <script>
         const btnSubmit = document.querySelector('#submit');
+        const productName = document.querySelector('#productName');
+        const quantityInStock = document.querySelector('#quantity');
+        const pricePerItem = document.querySelector('#price');
+
         btnSubmit.addEventListener('click', (event) => {
             event.preventDefault();
-            alert('Hello World');
+
+            if (productName.value.trim() === '' || quantityInStock.value.trim() === '' || quantityInStock.value.trim() === '') {
+                alert("Some Value are empty");
+                return;
+            }
+
+            fetch()
         })
     </script>
 
